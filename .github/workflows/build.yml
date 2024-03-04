@@ -1,0 +1,32 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-on-ubuntu:
+    name: Build on Ubuntu
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Setup JDK
+        uses: actions/setup-java@v4.1.0
+        with:
+          distribution: 'zulu' # See 'Supported distributions' for available options
+          java-version: '17'
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3.2.0
+      - name: Build with Gradle
+        working-directory: ./App/
+        run: ./gradlew build
+      - name: Upload APK
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          name: BLE_MQTT
+          path: |
+            App/app/build/outputs/apk/debug/org.pw.mateuszkrawczuk.bluetoothmqttproxy-debug.apk
+            App/app/build/outputs/apk/release/org.pw.mateuszkrawczuk.bluetoothmqttproxy-release-unsigned.apk
+            App/app/build/outputs/apk/release/org.pw.mateuszkrawczuk.bluetoothmqttproxy-release.apk
+
