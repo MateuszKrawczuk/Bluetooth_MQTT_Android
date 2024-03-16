@@ -15,6 +15,7 @@ hilt = "2.50"
 
 rxAndroidBLE = "1.18.1"
 paho = "1.0.2"
+timber = "5.0.1"
 
 [libraries]
 accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
@@ -39,6 +40,7 @@ hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref
 rxAndroidBLE = { group = "com.polidea.rxandroidble3", name = "rxandroidble", version.ref = "rxAndroidBLE" }
 paho-client = { group = "org.eclipse.paho", name = "org.eclipse.paho.client.mqttv3", version.ref = "paho" }
 paho-service = { group = "org.eclipse.paho", name = "org.eclipse.paho.android.service", version.ref = "paho" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

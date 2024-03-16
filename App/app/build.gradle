@@ -67,6 +67,7 @@ dependencies {
 
     implementation libs.accompanist.permissions
 
+    implementation libs.timber
     implementation libs.paho.client
     implementation libs.paho.service
     implementation libs.rxAndroidBLE
