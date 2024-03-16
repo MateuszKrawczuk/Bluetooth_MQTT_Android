@@ -65,6 +65,8 @@ dependencies {
     // kspAndroidTest(libs.hilt.android.compiler)
     // androidTestImplementation(libs.hilt.android.testing)
 
+    implementation libs.accompanist.permissions
+
     implementation libs.paho.client
     implementation libs.paho.service
     implementation libs.rxAndroidBLE
