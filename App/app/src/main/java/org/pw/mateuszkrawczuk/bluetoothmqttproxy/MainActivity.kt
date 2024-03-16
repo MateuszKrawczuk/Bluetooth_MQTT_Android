@@ -12,11 +12,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import dagger.hilt.android.AndroidEntryPoint
 import org.pw.mateuszkrawczuk.bluetoothmqttproxy.ui.theme.BluetoothMQTTProxyTheme
+import org.pw.mateuszkrawczuk.bluetoothmqttproxy.viewmodel.MainActivityViewModel
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit  var viewModel: MainActivityViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        viewModel.scan()
+
         setContent {
             BluetoothMQTTProxyTheme {
                 // A surface container using the 'background' color from the theme
